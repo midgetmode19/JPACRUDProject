@@ -14,7 +14,6 @@ INDEX VERSION 1.131+/Users/samanthajanik/SD/Java/JPACRUDProject/.metadata/.plugi
 1807235925.index
 389770878.index
 3003991892.index
-1440076671.index
 502416583.index
 1800733572.index
 956441932.index

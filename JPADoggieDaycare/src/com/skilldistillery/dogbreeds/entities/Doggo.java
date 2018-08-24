@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Dog {
+public class Doggo {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
@@ -28,7 +28,7 @@ public class Dog {
 	
 	// End Fields
 
-	public Dog(int id, String name, String breed, String age, String gender, String photoLink, int weightLbs,
+	public Doggo(int id, String name, String breed, String age, String gender, String photoLink, int weightLbs,
 			String nickname) {
 		this.id = id;
 		this.name = name;
@@ -104,7 +104,7 @@ public class Dog {
 		this.nickname = nickname;
 	}
 
-	public Dog() {
+	public Doggo() {
 	}
 
 	@Override
