@@ -13,6 +13,33 @@
 <title>Doggie Daycare</title>
 </head>
 <body>
+	<form:form action="getDoggo.do" method="GET">
+		<input type="text" name="id" placeholder="Enter Doggo ID" />
+		<br>
+		<button type="submit" class="btn btn-primary btn-std"
+			value="Find Doggo">Find Doggo</button>
+	</form:form>
+	<br>
+	<form:form action="listDoggos.do" method="GET">
+		<button type="submit" class="btn btn-primary btn-std"
+			value="View All dogs">View All Dogs</button>
+	</form:form>
+	<br>
+	<form:form action="addDoggo.do" method="POST">
+		<a class="btn btn-primary btn-std" href="addDoggo.jsp"
+			role="button">Add a New Dog</a>
+	</form:form>
+	<br>
+	<form:form action="updateDoggo.do" method="POST">
+		<a class="btn btn-primary btn-std" href="updateDoggo.jsp"
+			role="button">Update a Dog's Information</a>
+	</form:form>
+	<br>
+	<form:form action="deleteDoggo.do" method="POST">
+		<a class="btn btn-primary btn-std" href="deleteDoggo.jsp"
+			role="button">Remove a Dog from the list</a>
+	</form:form>
+	<br>
 
 </body>
 </html>

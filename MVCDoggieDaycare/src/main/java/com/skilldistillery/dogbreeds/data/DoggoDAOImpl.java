@@ -24,4 +24,16 @@ public class DoggoDAOImpl implements DoggoDAO {
 		return doggos;
 	}
 
+	@Override
+	public Doggo findDoggoById(int id) {
+		Doggo doggo = em.find(Doggo.class, id);
+		return doggo;
+	}
+
+	@Override
+	public Doggo addDoggo(Doggo doggo) {
+		em.persist(doggo);
+		return doggo;
+	}
+
 }
