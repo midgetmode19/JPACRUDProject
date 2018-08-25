@@ -12,10 +12,10 @@
 	<!-- End Entities -->
 		<properties>
 			<property name="javax.persistence.jdbc.url"
-				value="jdbc:mysql://localhost:3306/sdvid?useSSL=false" />
-			<property name="javax.persistence.jdbc.user" value="student" />
+				value="jdbc:mysql://localhost:3306/doggos?useSSL=false" />
+			<property name="javax.persistence.jdbc.user" value="userdoggo" />
 			<property name="javax.persistence.jdbc.password"
-				value="student" />
+				value="userdoggo" />
 			<property name="javax.persistence.jdbc.driver"
 				value="com.mysql.jdbc.Driver" />
 

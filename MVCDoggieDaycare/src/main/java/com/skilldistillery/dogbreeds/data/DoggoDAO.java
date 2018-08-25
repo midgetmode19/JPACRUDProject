@@ -1,5 +1,9 @@
 package com.skilldistillery.dogbreeds.data;
 
-public interface DoggoDAO {
+import java.util.List;
 
+import com.skilldistillery.dogbreeds.entities.Doggo;
+
+public interface DoggoDAO {
+	List<Doggo> loadIndex();
 }
