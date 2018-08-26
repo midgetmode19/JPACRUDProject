@@ -9,10 +9,10 @@
 <title>Action Complete</title>
 </head>
 <body>
-		<c:if test="${empty doggo}">
+		<c:if test="${succeeded = true}">
 			<p>The Dog has been removed from the list.</p>
 		</c:if>
-		<c:if test="${! empty doggo }">
+		<c:if test="${succeeded = false}">
 			<p>Failed to delete Dog from the list.</p>
 		</c:if>
 	<a href="index.do">Return to Main Menu</a>

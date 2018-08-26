@@ -9,7 +9,7 @@
 <title>Action Complete</title>
 </head>
 <body>
-		<c:if test="${! empty doggo}">
+		<c:if test="${not empty doggo}">
 			<p>The Dog's information has been updated.</p>
 			<p><c:out value="${doggo }"></c:out></p>
 		</c:if>

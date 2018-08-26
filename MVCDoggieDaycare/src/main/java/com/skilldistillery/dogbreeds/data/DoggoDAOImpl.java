@@ -36,4 +36,16 @@ public class DoggoDAOImpl implements DoggoDAO {
 		return doggo;
 	}
 
+	@Override
+	public boolean deleteDoggoById(int id) {
+		Doggo doggo = em.find(Doggo.class, id);
+		em.remove(doggo); // performs the delete on the managed entity
+		if (em.find(Doggo.class, id) == null) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+
 }

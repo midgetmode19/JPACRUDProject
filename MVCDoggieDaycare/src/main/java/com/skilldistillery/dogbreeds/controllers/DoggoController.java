@@ -17,28 +17,27 @@ import com.skilldistillery.dogbreeds.entities.Doggo;
 public class DoggoController {
 	@Autowired
 	private DoggoDAO dao;
+
 	@RequestMapping(path = "index.do")
 	public String index() {
-	
+
 		return "index";
 	}
+
 	@RequestMapping(path = "listDoggos.do")
 	public String listDoggos(Model model) {
 		List<Doggo> doggos = dao.loadIndex();
 		model.addAttribute("doggos", doggos);
 		return "listDoggos";
 	}
+
 	@RequestMapping(path = "getDoggo.do", method = RequestMethod.GET)
 	public String showFilmById(Model model, int id) {
-			Doggo d = dao.findDoggoById(id);
-			model.addAttribute(d);
-			return "showDoggo";
+		Doggo d = dao.findDoggoById(id);
+		model.addAttribute(d);
+		return "showDoggo";
 	}
-//	@RequestMapping(path = "AddDoggo.do", method = RequestMethod.GET)
-//	public String addDoggoFormView() {
-//	
-//		return "addDoggo";
-//	}
+
 	@RequestMapping(path = "addDoggo.do", method = RequestMethod.POST)
 	public ModelAndView addDoggoToData(Doggo doggo, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
@@ -47,9 +46,28 @@ public class DoggoController {
 		mv.setViewName("redirect:doggoAdded.do");
 		return mv;
 	}
+
 	@RequestMapping(path = "doggoAdded.do", method = RequestMethod.GET)
 	public String doggoActionView() {
 		return "doggoAdded";
+	}
+
+	@RequestMapping(path = "updateDoggo.do", method = RequestMethod.POST)
+	public ModelAndView updateExistingDoggo(Doggo doggo) {
+		ModelAndView mv = new ModelAndView();
+		dao.addDoggo(doggo);
+		mv.addObject("doggo", doggo);
+		mv.setViewName("updatedDoggo");
+		return mv;
+	}
+
+	@RequestMapping(path = "deleteDoggo.do", params = "id", method = RequestMethod.POST)
+	public ModelAndView deleteDoggo(int id) {
+		ModelAndView mv = new ModelAndView();
+		boolean deletedDoggo = dao.deleteDoggoById(id);
+		mv.addObject("succeeded", deletedDoggo);
+		mv.setViewName("deletedDoggo");
+		return mv;
 	}
 
 }
