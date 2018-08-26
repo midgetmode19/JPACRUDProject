@@ -23,9 +23,14 @@
 			role="button">Update a Dog's Information</a>
 	</form:form>
 	<br>
-	<form:form action="deleteDoggo.do" method="POST">
-		<a class="btn btn-primary btn-std" href="deletedDoggo.do"
+<%-- 	<form:form action="deleteDoggo.do" method="POST" value="${doggo.id }">
+		<a class="btn btn-primary btn-std"
 			role="button">Delete this Dog from the list</a>
-	</form:form>
+	</form:form> --%>
+	<form action="deleteDoggo.do" method="POST">
+				Remove this dog from the list:<input type="number"
+					name="id" value="${doggo.id}">
+				<button type="submit" class="btn btn-primary btn-sm" value="Submit">Delete
+					This Dog</button>
 </body>
 </html>
