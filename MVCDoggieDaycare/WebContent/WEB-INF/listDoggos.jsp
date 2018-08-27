@@ -15,8 +15,10 @@
 <body>
 	<c:forEach var="doggo" items="${doggos }">
 		<dl>
-			<li><c:out value="${doggo.photoLink }"></c:out></li>
-			<li><strong><a href="getDoggo.do?id=${doggo.id }"><c:out
+			<li><c:if test="${not empty doggo.photoLink }">
+					<img alt="Photo of ${doggo.name }" src="${doggo.photoLink }"
+						width="200">
+				</c:if> <strong><a href="getDoggo.do?id=${doggo.id }"><c:out
 							value="${doggo.name }" /></a></strong></li>
 		</dl>
 	</c:forEach>
