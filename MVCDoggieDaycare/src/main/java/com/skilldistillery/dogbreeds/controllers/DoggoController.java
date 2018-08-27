@@ -70,4 +70,10 @@ public class DoggoController {
 		return mv;
 	}
 
+	@RequestMapping(path = "getDoggoByName.do", method = RequestMethod.GET)
+	public String showDoggoByName(Model model, String name) {
+		List<Doggo> doggos = dao.findDoggoByName(name);
+		model.addAttribute(doggos);
+		return "listDoggos";
+	}
 }

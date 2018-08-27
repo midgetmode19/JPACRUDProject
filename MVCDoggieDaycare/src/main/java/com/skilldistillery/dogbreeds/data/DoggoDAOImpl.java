@@ -59,5 +59,11 @@ public class DoggoDAOImpl implements DoggoDAO {
 		managedDoggo.setWeightLbs(updatedDoggo.getWeightLbs());
 		return managedDoggo;
 	}
+	@Override
+	public List<Doggo> findDoggoByName(String name) {
+		query = "SELECT d FROM Doggo d WHERE d.name = :name";
+		List<Doggo> doggos = em.createQuery(query, Doggo.class).setParameter("name", name).getResultList();
+		return doggos;
+	}
 
 }

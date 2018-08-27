@@ -14,7 +14,15 @@
 </head>
 <body>
 	<form:form action="getDoggo.do" method="GET">
-		<input type="text" name="id" placeholder="Enter Doggo ID" />
+		<input type="text" name="id" placeholder="Enter Dog ID" required />
+		<br>
+		<button type="submit" class="btn btn-primary btn-std"
+			value="Find Doggo">Find Doggo</button>
+	</form:form>
+	<br>
+	<form:form action="getDoggoByName.do" method="GET">
+		<input type="text" name="name" placeholder="Enter The Dog's Name"
+			required />
 		<br>
 		<button type="submit" class="btn btn-primary btn-std"
 			value="Find Doggo">Find Doggo</button>
@@ -26,8 +34,8 @@
 	</form:form>
 	<br>
 	<form:form action="addDoggo.do" method="POST">
-		<a class="btn btn-primary btn-std" href="addDoggo.jsp"
-			role="button">Add a New Dog</a>
+		<a class="btn btn-primary btn-std" href="addDoggo.jsp" role="button">Add
+			a New Dog</a>
 	</form:form>
 	<br>
 

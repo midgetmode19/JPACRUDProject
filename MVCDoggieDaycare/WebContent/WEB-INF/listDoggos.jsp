@@ -10,14 +10,14 @@
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>List of Dogs matching your search</title>
 </head>
 <body>
 	<c:forEach var="doggo" items="${doggos }">
 		<dl>
+			<li><c:out value="${doggo.photoLink }"></c:out></li>
 			<li><strong><a href="getDoggo.do?id=${doggo.id }"><c:out
 							value="${doggo.name }" /></a></strong></li>
-			<li><em><c:out value="${doggo.breed }"></c:out></em></li>
 		</dl>
 	</c:forEach>
 

@@ -3,28 +3,41 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
+	rel="stylesheet" />
 <meta charset="UTF-8">
 <title>Show Doggo</title>
 </head>
 <body>
 	<div>
-		<h5>${doggo.name}
-			<p>ID: ${doggo.id }</p>
-			<p>${doggo.gender}</p>
-			<p>Breed: ${doggo.breed}</p>
-			<p>Age: ${doggo.age}</p>
-			<p>Weight: ${doggo.weightLbs }</p>
-			<p>Nickname: ${doggo.nickname }</p>
-		</h5>
+		<c:choose>
+			<c:when test="${not empty doggo.photoLink }">
+				<img alt="Photo of ${doggo.name }" src="${doggo.photoLink}"
+					width="300px">
+			</c:when>
+			<c:otherwise>
+				<em>No photo available</em>
+			</c:otherwise>
+		</c:choose>
+		<div>
+			<h5>${doggo.name}
+				<p>ID: ${doggo.id }</p>
+				<p>${doggo.gender}</p>
+				<p>Breed: ${doggo.breed}</p>
+				<p>Age: ${doggo.age}</p>
+				<p>Weight: ${doggo.weightLbs }</p>
+				<p>Nickname: ${doggo.nickname }</p>
+			</h5>
+		</div>
 	</div>
 
 	<br>
 	<form action="updateDoggo.do" method="POST">
-	<h4>Update your Dog's Informtion</h4>
+		<h4>Update your Dog's Informtion</h4>
 		<input type="hidden" name="id" value="${doggo.id}">
 		<p>
 			Name: <input type="text" name="name" value="${doggo.name }" />
@@ -64,8 +77,10 @@
 			value="${doggo.id}">
 		<button type="submit" class="btn btn-primary btn-sm" value="Submit">Delete
 			This Dog</button>
+	</form>
 
-		<br> <a class="btn btn-primary btn-std" href="index.do"
-			role="button">Return to Main Menu</a>
+	<br>
+	<a class="btn btn-primary btn-std" href="index.do" role="button">Return
+		to Main Menu</a>
 </body>
 </html>
