@@ -74,6 +74,6 @@ public class DoggoController {
 	public String showDoggoByName(Model model, String name) {
 		List<Doggo> doggos = dao.findDoggoByName(name);
 		model.addAttribute(doggos);
-		return "listDoggos";
+		return "listDoggosByName";
 	}
 }
