@@ -26,9 +26,9 @@
 			<c:otherwise>
 	No results matching your search.
 		</c:otherwise>
+	</c:choose>
 			<a class="btn btn-primary btn-std" href="index.do" role="button">Return
 				to Main Menu</a>
-	</c:choose>
 </div>
 
 </body>

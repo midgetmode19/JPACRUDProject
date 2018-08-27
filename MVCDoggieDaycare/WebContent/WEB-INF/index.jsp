@@ -20,13 +20,13 @@
 				<button type="submit" class="btn btn-primary btn-std"
 					value="Find Doggo">Find Doggo</button>
 		</form:form>
-		<%-- <br>
+		<br>
 		<form:form action="getDoggoByName.do" method="GET">
 			<input type="text" name="name" placeholder="Search by name" required />
 			<br>
 			<button type="submit" class="btn btn-primary btn-std"
 				value="Find Doggo">Find Doggo</button>
-		</form:form> --%>
+		</form:form>
 		<br>
 		<form:form action="listDoggos.do" method="GET">
 			<button type="submit" class="btn btn-primary btn-std"
