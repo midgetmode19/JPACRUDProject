@@ -13,21 +13,23 @@
 <title>List of Dogs matching your search</title>
 </head>
 <body>
-<c:choose>
-<c:when test="${not empty doggos }">
-	<c:forEach var="doggo" items="${doggos }">
-		<dl>
-			<li><c:out value="${doggo.photoLink }"></c:out></li>
-			<li><strong><a href="getDoggo.do?id=${doggo.id }"><c:out
-							value="${doggo.name }" /></a></strong></li>
-		</dl>
-	</c:forEach>
-	</c:when>
-	<c:otherwise>
+<div class="container">
+	<c:choose>
+		<c:when test="${not empty doggos }">
+			<c:forEach var="doggo" items="${doggos }">
+				<dl>
+					<li><strong><a href="getDoggo.do?id=${doggo.id }"><c:out
+									value="${doggo.name }" /></a></strong></li>
+				</dl>
+			</c:forEach>
+		</c:when>
+			<c:otherwise>
 	No results matching your search.
-	<a href="index.do">Return to Homepage</a>
-	</c:otherwise>
-</c:choose>
+		</c:otherwise>
+			<a class="btn btn-primary btn-std" href="index.do" role="button">Return
+				to Main Menu</a>
+	</c:choose>
+</div>
 
 </body>
 </html>
