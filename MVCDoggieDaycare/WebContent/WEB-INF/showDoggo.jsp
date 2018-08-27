@@ -15,6 +15,7 @@
 <body>
 	<div class="container">
 		<div class="mx-auto" style="width: 200px;">
+			<c:if test="${not empty doggo }">
 			<div>
 				<c:choose>
 					<c:when test="${not empty doggo.photoLink }">
@@ -90,6 +91,12 @@
 				<button type="submit" class="btn btn-danger btn-sm" value="Submit">Delete
 					This Dog</button>
 			</form>
+			</c:if>
+			<c:if test="${empty doggo }">
+			<em>
+			There were no dogs matching your search.
+			</em>
+			</c:if>
 
 			<br> <a class="btn btn-primary btn-std" href="index.do"
 				role="button">Return to Main Menu</a>

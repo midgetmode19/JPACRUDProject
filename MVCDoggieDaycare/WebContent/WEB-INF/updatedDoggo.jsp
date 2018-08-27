@@ -5,12 +5,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Action Complete</title>
-</head>
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css"
 	rel="stylesheet" />
+<meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Action Complete</title>
+</head>
 <body>
 	<div class="container">
 		<div>

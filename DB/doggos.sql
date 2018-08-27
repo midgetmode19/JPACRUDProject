@@ -48,8 +48,8 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `doggos`;
-INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (1, 'Pistol', 'Australian Shepherd', '4 years', 'Spayed Female', NULL, 18, 'Chicken Nugget');
-INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (2, 'Kaymus', 'Golden Retriever', '9 months', 'Female', NULL, 65, NULL);
+INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (1, 'Pistol', 'Australian Shepherd', '4 years', 'Spayed Female', 'https://scontent.fapa1-2.fna.fbcdn.net/v/t31.0-8/25438800_10102296534264142_1888057233853997690_o.jpg?_nc_cat=0&oh=64b65a47ea61c4ba7da4b7a8364abed5&oe=5C2FC869', 18, 'Chicken Nugget');
+INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (2, 'Kaymus', 'Golden Retriever', '9 months', 'Female', 'https://scontent.fapa1-2.fna.fbcdn.net/v/t1.0-9/32104584_10102485290125882_2589676438365929472_o.jpg?_nc_cat=0&oh=29652ba8b1bba3f606071419611913e3&oe=5BF62360', 65, NULL);
 INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (3, 'Loch Ness Monster', 'Border Terrier Mix', '4 years', 'Spayed Female', NULL, 39, 'Nessi');
 INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (4, 'Pico de Gallo', 'Chihuahua', '7 years', 'Neutered Male', NULL, 8, 'Pico');
 INSERT INTO `doggo` (`id`, `name`, `breed`, `age`, `gender`, `photo_link`, `weight_lbs`, `nickname`) VALUES (5, 'Loki', 'Australian Shepherd', '5 years', 'Neutered Male', NULL, 22, NULL);
