@@ -11,6 +11,7 @@
 <title>Add A Dog</title>
 </head>
 <body>
+<div class="container">
 	<form action="addDoggo.do" method="POST">
 		<input type="text" name="name" value="Duke" /> <input type="text"
 			name="breed" value="Border Collie" />
@@ -32,8 +33,10 @@
 		
 		<button type="submit" class="btn btn-primary btn-std"
 			value="Submit">Submit</button>
-			
-
 	</form>
+	
+	<a class="btn btn-primary btn-std" href="index.do" role="button">Return
+			to Main Menu</a>
+</div>
 </body>
 </html>
