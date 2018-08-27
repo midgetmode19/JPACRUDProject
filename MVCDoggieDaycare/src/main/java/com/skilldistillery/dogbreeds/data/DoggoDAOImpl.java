@@ -61,8 +61,9 @@ public class DoggoDAOImpl implements DoggoDAO {
 	}
 	@Override
 	public List<Doggo> findDoggoByName(String name) {
-		query = "SELECT d FROM Doggo d WHERE d.name LIKE CONCAT(:name) OR nickname LIKE CONCAT(:name)";
+		query = "SELECT d FROM Doggo d WHERE d.name LIKE :name OR nickname LIKE :name";
 		List<Doggo> doggos = em.createQuery(query, Doggo.class).setParameter("name", "%" + name + "%").setParameter("name", "%" + name + "%").getResultList();
+		System.out.println("*************** " + doggos);
 		return doggos;
 	}
 

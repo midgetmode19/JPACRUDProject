@@ -78,7 +78,10 @@ public class DoggoController {
 	public ModelAndView showDoggoByName(String name) {
 		ModelAndView mv = new ModelAndView();
 		List<Doggo> doggos = dao.findDoggoByName(name);
-		mv.addObject(doggos);
+		if(doggos != null) {
+			mv.addObject("doggos", doggos);
+			System.out.println("****** Made it to showdoggobyname!");
+		}
 		mv.setViewName("listDoggosByName");
 		return mv;
 	}
