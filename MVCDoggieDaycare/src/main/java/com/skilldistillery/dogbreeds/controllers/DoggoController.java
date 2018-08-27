@@ -32,10 +32,14 @@ public class DoggoController {
 	}
 
 	@RequestMapping(path = "getDoggo.do", method = RequestMethod.GET)
-	public String showDoggoById(Model model, int id) {
+	public ModelAndView showDoggoById(int id) {
+		ModelAndView mv = new ModelAndView();
 		Doggo d = dao.findDoggoById(id);
-		model.addAttribute(d);
-		return "showDoggo";
+		if (d != null) {
+			mv.addObject(d);
+		}
+		mv.setViewName("showDoggo");
+		return mv;
 	}
 
 	@RequestMapping(path = "addDoggo.do", method = RequestMethod.POST)
@@ -71,9 +75,11 @@ public class DoggoController {
 	}
 
 	@RequestMapping(path = "getDoggoByName.do", method = RequestMethod.GET)
-	public String showDoggoByName(Model model, String name) {
+	public ModelAndView showDoggoByName(String name) {
+		ModelAndView mv = new ModelAndView();
 		List<Doggo> doggos = dao.findDoggoByName(name);
-		model.addAttribute(doggos);
-		return "listDoggosByName";
+		mv.addObject(doggos);
+		mv.setViewName("listDoggosByName");
+		return mv;
 	}
 }
