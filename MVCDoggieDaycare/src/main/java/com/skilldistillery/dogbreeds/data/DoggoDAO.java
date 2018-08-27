@@ -9,4 +9,6 @@ public interface DoggoDAO {
 	Doggo findDoggoById(int id);
 	Doggo addDoggo(Doggo doggo);
 	boolean deleteDoggoById(int id);
+//	Doggo updateDoggo(int id);
+	Doggo updateDoggo(int id, Doggo updatedDoggo);
 }

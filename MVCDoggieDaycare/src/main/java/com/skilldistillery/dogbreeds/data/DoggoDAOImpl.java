@@ -42,10 +42,22 @@ public class DoggoDAOImpl implements DoggoDAO {
 		em.remove(doggo); // performs the delete on the managed entity
 		if (em.find(Doggo.class, id) == null) {
 			return true;
-		}
-		else {
+		} else {
 			return false;
 		}
+	}
+
+	@Override
+	public Doggo updateDoggo(int id, Doggo updatedDoggo) {
+		Doggo managedDoggo = em.find(Doggo.class, id);
+		managedDoggo.setName(updatedDoggo.getName());
+		managedDoggo.setAge(updatedDoggo.getAge());
+		managedDoggo.setBreed(updatedDoggo.getBreed());
+		managedDoggo.setGender(updatedDoggo.getGender());
+		managedDoggo.setNickname(updatedDoggo.getNickname());
+		managedDoggo.setPhotoLink(updatedDoggo.getPhotoLink());
+		managedDoggo.setWeightLbs(updatedDoggo.getWeightLbs());
+		return managedDoggo;
 	}
 
 }

@@ -9,14 +9,15 @@
 <title>Action Complete</title>
 </head>
 <body>
-		<c:if test="${not empty doggo}">
-			<p>The Dog's information has been updated.</p>
+			<c:if test="${updated = true}">
+			<p>The Dog's information has been successfully updated!</p>
 			<p><c:out value="${doggo }"></c:out></p>
 		</c:if>
-		<c:if test="${empty doggo }">
-			<p>Failed to update Dog</p>
+		<c:if test="${updated = false}">
+			<p>Failed to update the Dog's information</p>
 		</c:if>
-	<a href="index.do">Return to Main Menu</a>
+	<a class="btn btn-primary btn-std" href="index.do"
+			role="button">Return to Main Menu</a>
 
 </body>
 </html>

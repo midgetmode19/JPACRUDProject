@@ -15,7 +15,8 @@
 		<c:if test="${succeeded = false}">
 			<p>Failed to delete Dog from the list.</p>
 		</c:if>
-	<a href="index.do">Return to Main Menu</a>
+	<a class="btn btn-primary btn-std" href="index.do"
+			role="button">Return to Main Menu</a>
 
 </body>
 </html>
