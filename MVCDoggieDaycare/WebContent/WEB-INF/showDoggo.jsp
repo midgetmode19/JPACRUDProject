@@ -50,7 +50,7 @@
 		<div class="container">
 			<br>
 			<form action="updateDoggo.do" method="POST">
-				<h4>Update your Dog's Informtion</h4>
+				<h4>Update your Dog's Information</h4>
 				<input type="hidden" name="id" value="${doggo.id}">
 				<p>
 					Name: <input type="text" name="name" value="${doggo.name }" />

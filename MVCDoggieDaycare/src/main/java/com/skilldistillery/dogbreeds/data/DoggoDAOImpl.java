@@ -3,6 +3,8 @@ package com.skilldistillery.dogbreeds.data;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
@@ -15,6 +17,8 @@ import com.skilldistillery.dogbreeds.entities.Doggo;
 public class DoggoDAOImpl implements DoggoDAO {
 	@PersistenceContext
 	private EntityManager em;
+//	private static EntityManagerFactory emf = Persistence.createEntityManagerFactory("DoggieDaycare");
+//	private EntityManager em = emf.createEntityManager();
 	private String query;
 
 	@Override
@@ -26,6 +30,7 @@ public class DoggoDAOImpl implements DoggoDAO {
 
 	@Override
 	public Doggo findDoggoById(int id) {
+		System.out.println("************** " + em);
 		Doggo doggo = em.find(Doggo.class, id);
 		return doggo;
 	}
