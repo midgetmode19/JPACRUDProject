@@ -38,6 +38,7 @@ public class DoggoDAOImpl implements DoggoDAO {
 	@Override
 	public Doggo addDoggo(Doggo doggo) {
 		em.persist(doggo);
+		em.flush();
 		return doggo;
 	}
 

@@ -5,7 +5,6 @@ import static org.junit.Assert.assertNotEquals;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.Test;
 
 import com.skilldistillery.dogbreeds.data.DoggoDAOImpl;
 import com.skilldistillery.dogbreeds.entities.Doggo;

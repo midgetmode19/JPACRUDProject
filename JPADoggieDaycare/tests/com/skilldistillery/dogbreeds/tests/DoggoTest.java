@@ -1,7 +1,6 @@
 package com.skilldistillery.dogbreeds.tests;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,11 +19,13 @@ class DoggoTest {
 
 	@BeforeEach
 	void setUp() throws Exception {
-		
+
 	}
 
 	@AfterEach
 	void tearDown() throws Exception {
+		em.close();
+		emf.close();
 	}
 
 	@Test
@@ -32,7 +33,7 @@ class DoggoTest {
 		emf = Persistence.createEntityManagerFactory("DoggieDaycare");
 		em = emf.createEntityManager();
 		doggo = em.find(Doggo.class, 1);
-		
+
 		assertEquals("Pistol", doggo.getName());
 	}
 
